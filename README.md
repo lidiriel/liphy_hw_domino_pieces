@@ -4,5 +4,5 @@
 Text description for domino piece repository:
 
 - **PumpPiece** - A Piece that executes pump command.
-- **FilterWheel** - A Piece that executes filterwheel command.
+- **Filterwheel** - A Piece that executes filterwheel command.
 
