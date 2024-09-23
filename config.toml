@@ -2,7 +2,7 @@
 REGISTRY_NAME = "lidiriel"
 
 REPOSITORY_NAME = "liphy_hw_domino_pieces"
-REPOSITORY_LABEL = "Default Name Repository"
+REPOSITORY_LABEL = "Liphy hardware domino pieces"
 
 VERSION = "0.1"
 

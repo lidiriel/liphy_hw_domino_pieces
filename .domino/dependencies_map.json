@@ -1,0 +1,14 @@
+{
+    "group0": {
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "pieces": [
+            "PumpPiece",
+            "FiterWheelPiece"
+        ],
+        "secrets": [],
+        "source_image": "todo field use for docker pull <source_image>"
+    }
+}
