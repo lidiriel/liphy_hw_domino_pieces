@@ -1,5 +1,5 @@
 {
-    "name": "FilterWheelPiece",
+    "name": "FilterwheelPiece",
     "description": "Executes filter wheel command.",
     "dependency": {
         "requirements_file": "requirements_0.txt"
