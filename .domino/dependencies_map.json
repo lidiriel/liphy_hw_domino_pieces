@@ -6,9 +6,9 @@
         },
         "pieces": [
             "PumpPiece",
-            "FiterWheelPiece"
+            "FilterwheelPiece"
         ],
         "secrets": [],
-        "source_image": "todo field use for docker pull <source_image>"
+        "source_image": "ghcr.io/lidiriel/liphy_hw_domino_pieces:0.1-group0"
     }
 }
