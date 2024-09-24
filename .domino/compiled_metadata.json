@@ -1,4 +1,78 @@
 {
+    "IncubatorSensorPiece": {
+        "name": "IncubatorSensorPiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "default",
+            "hardware",
+            "MQTT",
+            "sensor"
+        ],
+        "style": {
+            "node_label": "Incubator Sensor",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid:fa-temperature-low",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "Get incubator sensors values.",
+        "input_schema": {
+            "description": "Incubator Heating Piece Input Model",
+            "properties": {
+                "incubator_uid": {
+                    "default": "orange_incubator",
+                    "description": "Incubator identifier (string).",
+                    "title": "Incubator Uid",
+                    "type": "string"
+                }
+            },
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "description": "Incubator Sensor Piece Output Model",
+            "properties": {
+                "message": {
+                    "description": "Incubator command executed",
+                    "title": "Message",
+                    "type": "string"
+                },
+                "temperature_target": {
+                    "description": "Target temperature",
+                    "title": "Temperature Target",
+                    "type": "number"
+                },
+                "temperature_sensor1": {
+                    "description": "Temperature sensor 1",
+                    "title": "Temperature Sensor1",
+                    "type": "number"
+                },
+                "temperature_sensor2": {
+                    "description": "Temperature sensor 2",
+                    "title": "Temperature Sensor2",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "message",
+                "temperature_target",
+                "temperature_sensor1",
+                "temperature_sensor2"
+            ],
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/lidiriel/liphy_hw_domino_pieces/tree/main/pieces/IncubatorSensorPiece"
+    },
     "PumpPiece": {
         "name": "PumpPiece",
         "dependency": {
@@ -8,7 +82,8 @@
         "tags": [
             "default",
             "hardware",
-            "MQTT"
+            "MQTT",
+            "actuator"
         ],
         "style": {
             "node_label": "Pump command",
@@ -60,6 +135,108 @@
         "secrets_schema": null,
         "source_url": "https://github.com/lidiriel/liphy_hw_domino_pieces/tree/main/pieces/PumpPiece"
     },
+    "BioreactorPiece": {
+        "name": "BioreactorPiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "default",
+            "hardware"
+        ],
+        "style": {
+            "node_label": "Bioreactor",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid:fa-vials",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "Selection of Bioreactor.",
+        "input_schema": {
+            "$defs": {
+                "BioreactorId": {
+                    "enum": [
+                        "BioRe_1",
+                        "BioRe_2",
+                        "BioRe_3",
+                        "BioRe_4",
+                        "BioRe_5",
+                        "BioRe_6",
+                        "BioRe_7",
+                        "BioRe_8",
+                        "BioRe_9",
+                        "BioRe_10"
+                    ],
+                    "title": "BioreactorId",
+                    "type": "string"
+                }
+            },
+            "description": "Bioreactor Piece Input Model",
+            "properties": {
+                "incubator_uid": {
+                    "default": "orange_incubator",
+                    "description": "Incubator identifier (string).",
+                    "title": "Incubator Uid",
+                    "type": "string"
+                },
+                "bioreactors": {
+                    "default": [],
+                    "description": "Selection of Bioreactor",
+                    "items": {
+                        "$ref": "#/$defs/BioreactorId"
+                    },
+                    "title": "Bioreactors",
+                    "type": "array"
+                }
+            },
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "$defs": {
+                "BioreactorId": {
+                    "enum": [
+                        "BioRe_1",
+                        "BioRe_2",
+                        "BioRe_3",
+                        "BioRe_4",
+                        "BioRe_5",
+                        "BioRe_6",
+                        "BioRe_7",
+                        "BioRe_8",
+                        "BioRe_9",
+                        "BioRe_10"
+                    ],
+                    "title": "BioreactorId",
+                    "type": "string"
+                }
+            },
+            "description": "Bioreactor Piece Output Model",
+            "properties": {
+                "bioreactors": {
+                    "description": "Bioreactor(s) used",
+                    "items": {
+                        "$ref": "#/$defs/BioreactorId"
+                    },
+                    "title": "Bioreactors",
+                    "type": "array"
+                }
+            },
+            "required": [
+                "bioreactors"
+            ],
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/lidiriel/liphy_hw_domino_pieces/tree/main/pieces/BioreactorPiece"
+    },
     "FilterwheelPiece": {
         "name": "FilterwheelPiece",
         "dependency": {
@@ -69,7 +246,8 @@
         "tags": [
             "default",
             "hardware",
-            "MQTT"
+            "MQTT",
+            "actuator"
         ],
         "style": {
             "node_label": "Filter wheel command",
@@ -120,5 +298,73 @@
         },
         "secrets_schema": null,
         "source_url": "https://github.com/lidiriel/liphy_hw_domino_pieces/tree/main/pieces/FilterwheelPiece"
+    },
+    "IncubatorHeatingPiece": {
+        "name": "IncubatorHeatingPiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "default",
+            "hardware",
+            "MQTT",
+            "actuator"
+        ],
+        "style": {
+            "node_label": "Incubator Heating",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid:fa-temperature-high",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "Executes incubator heating command.",
+        "input_schema": {
+            "description": "Incubator Heating Piece Input Model",
+            "properties": {
+                "incubator_uid": {
+                    "default": "orange_incubator",
+                    "description": "Incubator identifier (string).",
+                    "title": "Incubator Uid",
+                    "type": "string"
+                },
+                "temperature_target": {
+                    "default": 37.0,
+                    "description": "Target temperature (float)",
+                    "title": "Temperature Target",
+                    "type": "number"
+                },
+                "temperature_heating": {
+                    "default": false,
+                    "description": "Heating activation",
+                    "title": "Temperature Heating",
+                    "type": "boolean"
+                }
+            },
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "description": "Incubator Heating Piece Output Model",
+            "properties": {
+                "message": {
+                    "description": "Incubator command executed",
+                    "title": "Message",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "message"
+            ],
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/lidiriel/liphy_hw_domino_pieces/tree/main/pieces/IncubatorHeatingPiece"
     }
 }
