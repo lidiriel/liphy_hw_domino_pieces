@@ -4,7 +4,8 @@ REGISTRY_NAME = "lidiriel"
 # The name of this Pieces repository
 REPOSITORY_NAME = "liphy_hw_domino_pieces"
 # The label of this Pieces repository, as it will appear in Domino GUI
-REPOSITORY_LABEL = "Liphy hardware pieces"
+REPOSITORY_LABEL = "Liphy hardware domino pieces"
 # The version of this Pieces release
-VERSION = "0.1"
-
+VERSION = "0.2"
+# 0.2 add incubator, bioreactor pieces
+# 0.1 add pump and filterwheel pieces

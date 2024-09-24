@@ -1,0 +1,17 @@
+{
+    "name": "IncubatorHeatingPiece",
+    "description": "Executes incubator heating command.",
+    "dependency": {
+        "requirements_file": "requirements_0.txt"
+    },
+    "tags": [
+        "default",
+        "hardware",
+        "MQTT",
+       	"actuator"
+   	],
+    "style": {
+        "node_label": "Incubator Heating",
+        "icon_class_name": "fa-solid:fa-temperature-high"
+    }
+}

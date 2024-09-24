@@ -1,0 +1,15 @@
+{
+    "name": "BioreactorPiece",
+    "description": "Selection of Bioreactor.",
+    "dependency": {
+        "requirements_file": "requirements_0.txt"
+    },
+    "tags": [
+        "default",
+        "hardware"
+    ],
+    "style": {
+        "node_label": "Bioreactor",
+        "icon_class_name": "fa-solid:fa-vials"
+    }
+}

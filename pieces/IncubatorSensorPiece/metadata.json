@@ -1,0 +1,17 @@
+{
+    "name": "IncubatorSensorPiece",
+    "description": "Get incubator sensors values.",
+    "dependency": {
+        "requirements_file": "requirements_0.txt"
+    },
+    "tags": [
+        "default",
+        "hardware",
+        "MQTT",
+       	"sensor"
+   	],
+    "style": {
+        "node_label": "Incubator Sensor",
+        "icon_class_name": "fa-solid:fa-temperature-low"
+    }
+}
